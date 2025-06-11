@@ -7,8 +7,9 @@ const usuarioRoutes = require('./routes/usuarioRoutes');
 const produtoRoutes = require('./routes/produtoRoutes');
 const categoriaRoutes = require('./routes/categoriaRoutes');
 const testeRoutes = require('./routes/testeRoutes'); 
+const pedidosRoutes = require('./routes/pedidosRoutes'); // Importando o roteador de pedidos
 
-const app = express();
+const app = express(); 
 const PORT = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
@@ -23,7 +24,8 @@ app.use('/', indexRoutes);
 app.use('/usuarios', usuarioRoutes);
 app.use('/produtos', produtoRoutes);
 app.use('/categorias', categoriaRoutes);
-app.use('/testes', testeRoutes); 
+app.use('/testes', testeRoutes);
+app.use('/pedidos', pedidosRoutes); // Usando o roteador de pedidos
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

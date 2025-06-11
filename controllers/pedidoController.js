@@ -1,4 +1,4 @@
-const db = require('../db');
+const db = require('../config/db');
 
 // Listar todos os pedidos
 exports.listarPedidos = (req, res) => {
